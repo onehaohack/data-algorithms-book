@@ -14,13 +14,13 @@
 #
 # @author Mahmoud Parsian
 #
+export BOOK_HOME=~/workspace/data-algorithms-book
+export SPARK_HOME=~/soft/spark-2.2.0-bin-hadoop2.7
+export SPARK_MASTER=spark://192.168.0.112:7077
+export SPARK_JAR=$BOOK_HOME/lib/spark-assembly-1.6.0-hadoop2.6.0.jar
+export APP_JAR=$BOOK_HOME/target/data-algorithms-1.0.0.jar
+export HDFS_HOME=hdfs://localhost:9000/user/onehao
 
-export JAVA_HOME=/usr/java/jdk7
-export SPARK_HOME=/usr/local/spark-1.2.0
-export SPARK_JAR=$SPARK_HOME/assembly/target/scala-2.10/spark-assembly-1.2.0-hadoop2.6.0.jar
-export SPARK_MASTER=spark://myserver100:7077
-export BOOK_HOME=/home/data-algorithms-book
-export APP_JAR=$BOOK_HOME/dist/data_algorithms_book.jar
 #
 INPUT=$BOOK_HOME/data/top10data.txt
 topN=2
