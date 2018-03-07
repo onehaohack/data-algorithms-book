@@ -14,5 +14,5 @@ INPUT="hdfs://localhost:9000/user/onehao/workspace/data-algorithms-book/time_ser
 OUTPUT="$HDFS_HOME/hdoutput"
 $HADOOP_HOME/bin/hadoop fs -rmr $OUTPUT
 #
-prog=org.dataalgorithms.chap01.spark.SecondarySortUsingGroupByKey
-$SPARK_HOME/bin/spark-submit  --class $prog --master $SPARK_MASTER $APP_JAR $INPUT $OUTPUT
+prog=org.dataalgorithms.chap02.mapreduce.SecondarySortDriver
+$HADOOP_HOME/bin/hadoop jar $APP_JAR $prog $INPUT $OUTPUT
