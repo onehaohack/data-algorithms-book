@@ -10,7 +10,7 @@ export APP_JAR=$BOOK_HOME/target/data-algorithms-1.0.0.jar
 export HDFS_HOME=hdfs://localhost:9000/user/onehao
 # define input parameters
 #INPUT="file://$BOOK_HOME/time_series.txt"
-INPUT="hdfs://localhost:9000/user/onehao/workspace/data-algorithms-book/time_series.txt"
+INPUT="hdfs://localhost:9000/user/onehao/workspace/data-algorithms-book/sample_input.txt"
 OUTPUT="$HDFS_HOME/hdoutput"
 $HADOOP_HOME/bin/hadoop fs -rmr $OUTPUT
 #
