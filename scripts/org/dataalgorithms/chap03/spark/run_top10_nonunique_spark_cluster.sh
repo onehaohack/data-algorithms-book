@@ -21,6 +21,7 @@ export SPARK_JAR=$BOOK_HOME/lib/spark-assembly-1.6.0-hadoop2.6.0.jar
 export APP_JAR=$BOOK_HOME/target/data-algorithms-1.0.0.jar
 export HDFS_HOME=hdfs://localhost:9000/user/onehao
 
+
 #
 INPUT=$BOOK_HOME/data/top10data.txt
 topN=2
