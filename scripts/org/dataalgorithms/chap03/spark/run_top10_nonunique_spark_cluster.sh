@@ -33,4 +33,4 @@ $SPARK_HOME/bin/spark-submit \
   --executor-memory 2G \
   --total-executor-cores 20 \
   $APP_JAR \
-  $INPUT $topN
+  $INPUT $TOPN
