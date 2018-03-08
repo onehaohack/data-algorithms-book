@@ -19,13 +19,13 @@ export SPARK_HOME=~/soft/spark-2.2.0-bin-hadoop2.7
 export SPARK_MASTER=spark://192.168.0.112:7077
 export SPARK_JAR=$BOOK_HOME/lib/spark-assembly-1.6.0-hadoop2.6.0.jar
 export APP_JAR=$BOOK_HOME/target/data-algorithms-1.0.0.jar
-export HDFS_HOME=hdfs://localhost:9000/user/onehao
+export HDFS_HOME=hdfs://localhost:9000
 
 
 #export HADOOP_HOME=/usr/local/hadoop/hadoop-2.6.0
 #export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
 #
-INPUT=/data/chap03/input
+INPUT=$HDFS_HOME/data/chap03/input
 TOPN=4
 prog=org.dataalgorithms.chap03.spark.Top10UsingTakeOrdered
 $SPARK_HOME/bin/spark-submit \
