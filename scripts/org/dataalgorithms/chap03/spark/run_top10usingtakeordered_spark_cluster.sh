@@ -28,12 +28,10 @@ export HDFS_HOME=hdfs://localhost:9000/user/onehao
 INPUT=/data/chap03/input
 TOPN=4
 prog=org.dataalgorithms.chap03.spark.Top10UsingTakeOrdered
-$SPARK_HOME/bin/spark-submit 
-	--class $prog \
-    --master yarn-cluster \
-    --num-executors 12 \
-    --driver-memory 3g \
-    --executor-memory 7g \
-    --executor-cores 12 \
-    --conf "spark.yarn.jar=$SPARK_JAR" \
-    $APP_JAR $INPUT $TOPN 
+$SPARK_HOME/bin/spark-submit \
+  --class $prog \
+  --master $SPARK_MASTER \
+  --executor-memory 2G \
+  --total-executor-cores 20 \
+  $APP_JAR \
+  $INPUT $TOPN
