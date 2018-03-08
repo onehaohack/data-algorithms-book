@@ -63,7 +63,7 @@ public class Top10UsingTakeOrdered implements Serializable {
       //    input record format:
       //        <string-key><,><integer-value-count>
       JavaRDD<String> lines = ctx.textFile(inputPath, 1);
-      lines.saveAsTextFile("/output/1");
+      lines.saveAsTextFile("hdfs://localhost:9000/data/output/1");
 
       // STEP-4: partition RDD
       // public JavaRDD<T> coalesce(int numPartitions)
@@ -80,7 +80,7 @@ public class Top10UsingTakeOrdered implements Serializable {
             return new Tuple2<String,Integer>(tokens[0], Integer.parseInt(tokens[1]));
          }
       });
-      kv.saveAsTextFile("/output/2");
+      kv.saveAsTextFile("hdfs://localhost:9000/data/output/2");
 
       // STEP-6: reduce frequent K's
       JavaPairRDD<String, Integer> uniqueKeys = kv.reduceByKey(new Function2<Integer, Integer, Integer>() {
@@ -89,7 +89,7 @@ public class Top10UsingTakeOrdered implements Serializable {
             return i1 + i2;
          }
       });
-      uniqueKeys.saveAsTextFile("/output/3");
+      uniqueKeys.saveAsTextFile("hdfs://localhost:9000/data/output/3");
 
       // STEP-7: find final top-N by calling takeOrdered()
       List<Tuple2<String, Integer>> topNResult = uniqueKeys.takeOrdered(N, MyTupleComparator.INSTANCE);
